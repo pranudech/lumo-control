@@ -14,9 +14,24 @@ export default function Home() {
   const [leftValue, setLeftValue] = useState('1.0');
   const [showConnectModal, setShowConnectModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
+  const [audioContext, setAudioContext] = useState(null);
 
   const serviceUuid = '4fafc201-1fb5-459e-8fcc-c5c9c331914b';
   const characteristicUuid = 'beb5483e-36e1-4688-b7f5-ea07361b26a8';
+
+  useEffect(() => {
+    // Initialize audio context on first user interaction
+    const initAudio = () => {
+      if (!audioContext) {
+        const context = new (window.AudioContext || window.webkitAudioContext)();
+        setAudioContext(context);
+      }
+    };
+
+    // Add event listener for first user interaction
+    document.addEventListener('click', initAudio, { once: true });
+    return () => document.removeEventListener('click', initAudio);
+  }, []);
 
   const getCommandIcon = (command) => {
     if (!command) return null;
@@ -62,7 +77,29 @@ export default function Home() {
     }
   };
 
+  const playClickSound = () => {
+    if (!audioContext) return;
+
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    // Set up the click sound
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(100, audioContext.currentTime + 0.1);
+
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 0.1);
+  };
+
   const handleConnect = async () => {
+    playClickSound();
     try {
       if (!navigator.bluetooth) {
         throw new Error('Web Bluetooth API is not supported in your browser. Please use Chrome.');
@@ -113,6 +150,7 @@ export default function Home() {
   };
 
   const addCommand = (command, value) => {
+    playClickSound();
     if (commands.length >= 12) {
       setStatus('Maximum 12 commands allowed');
       return;
@@ -122,12 +160,14 @@ export default function Home() {
   };
 
   const removeCommand = (index) => {
+    playClickSound();
     const newCommands = [...commands];
     newCommands.splice(index, 1);
     setCommands(newCommands);
   };
 
   const sendAllCommands = async () => {
+    playClickSound();
     if (!characteristic) {
       setStatus('Not connected');
       return;
@@ -155,7 +195,7 @@ export default function Home() {
       <div className="max-w-6xl mx-auto bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 animate-fade-in border-4 border-blue-200/50 dark:border-cyan-700/50">
         <div className="text-center mb-8">
           <div className="flex flex-col items-center justify-center gap-4 mb-4">
-            <img src="/images/logo.png" alt="PUMO" className="h-30 animate-bounce" />
+            <img src="/images/logo.png" alt="PUMO" className="h-30 animate-bounce" onClick={playClickSound} />
             <h5 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 bg-clip-text text-transparent animate-pulse">
               PUMO Control
             </h5>
