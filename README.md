@@ -1,8 +1,17 @@
 # 🎮 Lumo Control
 
+<div align="center">
+  <img src="public/lumo-logo.svg" alt="Lumo Control Logo" width="200"/>
+</div>
+
 A modern web application built with Next.js for controlling and managing Lumo devices.
 
 ## 🚀 Features
+
+<div align="center">
+  <img src="public/control-panel.svg" alt="Control Panel" width="200"/>
+  <img src="public/device-status.svg" alt="Device Status" width="200"/>
+</div>
 
 - 🎨 Modern UI with Tailwind CSS
 - ⚡ Fast and responsive design
@@ -58,9 +67,17 @@ The application can be deployed on Vercel or any other platform that supports Ne
 
 ### 🌐 Deploy on Vercel
 
+[![Deploy with Vercel](public/vercel.svg)](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 ## 🧰 Tech Stack
+
+<div align="center">
+  <img src="public/next.svg" alt="Next.js" width="50"/>
+  <img src="public/globe.svg" alt="React" width="50"/>
+  <img src="public/window.svg" alt="Tailwind" width="50"/>
+</div>
 
 - 🏗️ **Framework**: Next.js 15.3.1
 - ⚛️ **UI Library**: React 19.0.0

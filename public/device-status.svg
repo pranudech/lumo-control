@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Device Body -->
+  <rect x="40" y="40" width="120" height="160" rx="20" fill="#F3F4F6" stroke="#4F46E5" stroke-width="4"/>
+  
+  <!-- Screen -->
+  <rect x="50" y="50" width="100" height="80" rx="10" fill="#4F46E5" opacity="0.1"/>
+  
+  <!-- Status Indicators -->
+  <circle cx="70" cy="150" r="10" fill="#10B981"/>
+  <circle cx="100" cy="150" r="10" fill="#F59E0B"/>
+  <circle cx="130" cy="150" r="10" fill="#EF4444"/>
+  
+  <!-- Connection Lines -->
+  <path d="M50 100L30 80" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M150 100L170 80" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Signal Waves -->
+  <path d="M30 80C30 60 50 60 50 80" stroke="#4F46E5" stroke-width="2" fill="none"/>
+  <path d="M170 80C170 60 150 60 150 80" stroke="#4F46E5" stroke-width="2" fill="none"/>
+</svg> 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Panel Background -->
+  <rect x="20" y="20" width="160" height="160" rx="20" fill="#F3F4F6" stroke="#4F46E5" stroke-width="4"/>
+  
+  <!-- Control Buttons -->
+  <circle cx="70" cy="70" r="20" fill="#4F46E5" opacity="0.8"/>
+  <circle cx="130" cy="70" r="20" fill="#4F46E5" opacity="0.8"/>
+  <circle cx="70" cy="130" r="20" fill="#4F46E5" opacity="0.8"/>
+  <circle cx="130" cy="130" r="20" fill="#4F46E5" opacity="0.8"/>
+  
+  <!-- Button Icons -->
+  <path d="M70 60L70 80M60 70L80 70" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M130 60L130 80" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M70 120L70 140" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="130" cy="130" r="8" fill="white"/>
+  
+  <!-- Status Indicator -->
+  <rect x="60" y="170" width="80" height="10" rx="5" fill="#4F46E5"/>
+</svg> 

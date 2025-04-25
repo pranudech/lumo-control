@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="#4F46E5" opacity="0.1"/>
+  
+  <!-- Main Circle -->
+  <circle cx="100" cy="100" r="70" stroke="#4F46E5" stroke-width="8" fill="none"/>
+  
+  <!-- Inner Circle -->
+  <circle cx="100" cy="100" r="40" stroke="#4F46E5" stroke-width="4" fill="none"/>
+  
+  <!-- Light Rays -->
+  <path d="M100 30L110 50L90 50L100 30Z" fill="#4F46E5"/>
+  <path d="M100 170L110 150L90 150L100 170Z" fill="#4F46E5"/>
+  <path d="M30 100L50 110L50 90L30 100Z" fill="#4F46E5"/>
+  <path d="M170 100L150 110L150 90L170 100Z" fill="#4F46E5"/>
+  
+  <!-- Diagonal Rays -->
+  <path d="M40 40L55 55L45 65L30 50L40 40Z" fill="#4F46E5"/>
+  <path d="M160 160L145 145L155 135L170 150L160 160Z" fill="#4F46E5"/>
+  <path d="M40 160L55 145L45 135L30 150L40 160Z" fill="#4F46E5"/>
+  <path d="M160 40L145 55L155 65L170 50L160 40Z" fill="#4F46E5"/>
+</svg> 
