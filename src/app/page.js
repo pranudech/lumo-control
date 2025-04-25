@@ -28,23 +28,17 @@ export default function Home() {
     switch (type) {
       case 'F':
         icon = (
-          <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-          </svg>
+          <img src="/images/F.png" alt="F" className="" />
         );
         break;
       case 'R':
         icon = (
-          <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <img src="/images/R.png" alt="R" className="" />
         );
         break;
       case 'L':
         icon = (
-          <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          <img src="/images/R.png" alt="R" className="" />
         );
         break;
       default:
@@ -54,7 +48,6 @@ export default function Home() {
     return (
       <div className="flex flex-col items-center">
         {icon}
-        <span className="text-sm mt-1">{value}</span>
       </div>
     );
   };
@@ -162,31 +155,10 @@ export default function Home() {
       <div className="max-w-6xl mx-auto bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 animate-fade-in border-4 border-blue-200/50 dark:border-cyan-700/50">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
+            <img src="/images/logo.png" alt="PUMO" className="h-20 animate-bounce" />
             <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 bg-clip-text text-transparent animate-pulse">
               PUMO Control :)
             </h1>
-          </div>
-          <div className={`p-4 rounded-xl text-xl transition-all duration-300 flex items-center justify-center gap-2 ${status === 'Connected' ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400' :
-            status.includes('failed') ? 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400' :
-              'bg-blue-100 dark:bg-cyan-700/50 text-blue-700 dark:text-cyan-300'
-            }`}>
-            <svg className={`w-8 h-8 ${status === 'Connected' ? 'text-green-500' :
-              status.includes('failed') ? 'text-red-500' : 'text-blue-400'
-              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {status === 'Connected' ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              ) : status.includes('failed') ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              )}
-            </svg>
-            {status}
           </div>
         </div>
 
@@ -258,13 +230,9 @@ export default function Home() {
               disabled={!device}
               className="w-full h-48 bg-gradient-to-br bg-white border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
-              {/* <div className="transform group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                L
-              </div> */}
-              <img src="/images/L.png" alt="L" className="max-h-[192px]" />
+              <div className="transform group-hover:scale-110 transition-transform duration-300">
+                <img src="/images/L.png" alt="L" className="max-h-[192px]" />
+              </div>
             </button>
           </div>
 
@@ -275,10 +243,6 @@ export default function Home() {
               className="w-full h-48 bg-gradient-to-br bg-white border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
               <div className="transform group-hover:scale-110 transition-transform duration-300">
-                {/* <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                </svg>
-                F */}
                 <img src="/images/F.png" alt="Forward" className="max-h-[192px]" />
               </div>
             </button>
@@ -290,13 +254,9 @@ export default function Home() {
               disabled={!device}
               className="w-full h-48 bg-gradient-to-br bg-white border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
-              {/* <div className="transform group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                R
-              </div> */}
-              <img src="/images/R.png" alt="R" className="max-h-[192px]" />
+              <div className="transform group-hover:scale-110 transition-transform duration-300">
+                <img src="/images/R.png" alt="R" className="max-h-[192px]" />
+              </div>
             </button>
           </div>
 
@@ -304,10 +264,10 @@ export default function Home() {
       </div>
 
       {/* Connect Button */}
-      <div className="fixed bottom-8 right-8 flex gap-4">
+      <div className="fixed bottom-8 right-8 flex gap-4 items-end">
         <button
           onClick={() => setShowSettingsModal(true)}
-          className="cursor-pointer bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white p-4 rounded-full shadow-xl hover:translate-y-[-5px] hover:shadow-2xl transition-all duration-300 group"
+          className="max-w-[72px] max-h-[72px] cursor-pointer bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white p-4 rounded-full shadow-xl hover:translate-y-[-5px] hover:shadow-2xl transition-all duration-300 group"
         >
           <svg className="w-10 h-10 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -315,14 +275,29 @@ export default function Home() {
           </svg>
         </button>
 
-        <button
-          onClick={() => setShowConnectModal(true)}
-          className="cursor-pointer bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white p-4 rounded-full shadow-xl hover:translate-y-[-5px] hover:shadow-2xl transition-all duration-300 group"
-        >
-          <svg className="w-10 h-10 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
-        </button>
+        <div className="flex flex-col items-center gap-2">
+          
+          <div className={`text-sm px-2 py-1 rounded-full transition-all duration-300 flex items-center gap-1 ${connectionStatus === 'Connected' ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400' :
+              'bg-blue-100 dark:bg-cyan-700/50 text-blue-700 dark:text-cyan-300'
+            }`}>
+            <svg className={`w-4 h-4 ${connectionStatus === 'Connected' ? 'text-green-500' : 'text-blue-400'
+              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {connectionStatus === 'Connected' ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              )}
+            </svg>
+            {connectionStatus}
+          </div>
+
+          <button
+            onClick={() => setShowConnectModal(true)}
+            className="cursor-pointer bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white p-4 rounded-full shadow-xl hover:translate-y-[-5px] hover:shadow-2xl transition-all duration-300 group"
+          >
+            <img src="/images/bluetooth.png" alt="Bluetooth" className="w-10 h-10" />
+          </button>
+        </div>
       </div>
 
       {/* Settings Modal */}
