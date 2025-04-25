@@ -38,7 +38,7 @@ export default function Home() {
         break;
       case 'L':
         icon = (
-          <img src="/images/R.png" alt="R" className="" />
+          <img src="/images/L.png" alt="R" className="" />
         );
         break;
       default:
@@ -154,11 +154,11 @@ export default function Home() {
     <div className="min-h-screen p-8 bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-50 dark:from-blue-900 dark:via-cyan-900/20 dark:to-indigo-900">
       <div className="max-w-6xl mx-auto bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 animate-fade-in border-4 border-blue-200/50 dark:border-cyan-700/50">
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <img src="/images/logo.png" alt="PUMO" className="h-20 animate-bounce" />
-            <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 bg-clip-text text-transparent animate-pulse">
-              PUMO Control :)
-            </h1>
+          <div className="flex flex-col items-center justify-center gap-4 mb-4">
+            <img src="/images/logo.png" alt="PUMO" className="h-30 animate-bounce" />
+            <h5 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 bg-clip-text text-transparent animate-pulse">
+              PUMO Control
+            </h5>
           </div>
         </div>
 
@@ -228,7 +228,7 @@ export default function Home() {
             <button
               onClick={() => addCommand('LR', leftValue)}
               disabled={!device}
-              className="w-full h-48 bg-gradient-to-br bg-white border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
+              className="w-full h-48 bg-gradient-to-br bg-[#FF9999] border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
               <div className="transform group-hover:scale-110 transition-transform duration-300">
                 <img src="/images/L.png" alt="L" className="max-h-[192px]" />
@@ -240,7 +240,7 @@ export default function Home() {
             <button
               onClick={() => addCommand('FT', forwardValue)}
               disabled={!device}
-              className="w-full h-48 bg-gradient-to-br bg-white border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
+              className="w-full h-48 bg-gradient-to-br bg-[#98FB98] border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
               <div className="transform group-hover:scale-110 transition-transform duration-300">
                 <img src="/images/F.png" alt="Forward" className="max-h-[192px]" />
@@ -252,7 +252,7 @@ export default function Home() {
             <button
               onClick={() => addCommand('RR', rightValue)}
               disabled={!device}
-              className="w-full h-48 bg-gradient-to-br bg-white border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
+              className="w-full h-48 bg-gradient-to-br bg-[#EEE8AA] border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
               <div className="transform group-hover:scale-110 transition-transform duration-300">
                 <img src="/images/R.png" alt="R" className="max-h-[192px]" />
