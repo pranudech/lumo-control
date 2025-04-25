@@ -234,6 +234,10 @@ export default function Home() {
             </div>
 
             <button
+              // onClick={() => {
+                // console.log('sendAllCommands', commands);
+                // sendAllCommands();
+              // }}
               onClick={sendAllCommands}
               disabled={!device || commands.length === 0}
               className="w-32 h-32 bg-gradient-to-br from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex flex-col items-center justify-center gap-2 group animate-pulse"
@@ -249,7 +253,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col items-center gap-4 group">
             <button
-              onClick={() => addCommand('F', forwardValue)}
+              onClick={() => addCommand('FT', forwardValue)}
               disabled={!device}
               className="w-full h-48 bg-gradient-to-br from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
@@ -264,7 +268,7 @@ export default function Home() {
           
           <div className="flex flex-col items-center gap-4 group">
             <button
-              onClick={() => addCommand('R', rightValue)}
+              onClick={() => addCommand('RR', rightValue)}
               disabled={!device}
               className="w-full h-48 bg-gradient-to-br from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
@@ -279,7 +283,7 @@ export default function Home() {
           
           <div className="flex flex-col items-center gap-4 group">
             <button
-              onClick={() => addCommand('L', leftValue)}
+              onClick={() => addCommand('LR', leftValue)}
               disabled={!device}
               className="w-full h-48 bg-gradient-to-br from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
