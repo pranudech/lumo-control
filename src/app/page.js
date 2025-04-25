@@ -158,25 +158,25 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-purple-900 dark:via-blue-900/20 dark:to-pink-900">
-      <div className="max-w-6xl mx-auto bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 animate-fade-in border-4 border-pink-200/50 dark:border-purple-700/50">
+    <div className="min-h-screen p-8 bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-50 dark:from-blue-900 dark:via-cyan-900/20 dark:to-indigo-900">
+      <div className="max-w-6xl mx-auto bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 animate-fade-in border-4 border-blue-200/50 dark:border-cyan-700/50">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+            <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
               <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h1 className="text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent animate-pulse">
-              LUMO Control :)
+            <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 bg-clip-text text-transparent animate-pulse">
+              PUMO Control :)
             </h1>
           </div>
           <div className={`p-4 rounded-xl text-xl transition-all duration-300 flex items-center justify-center gap-2 ${status === 'Connected' ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400' :
               status.includes('failed') ? 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400' :
-                'bg-pink-100 dark:bg-purple-700/50 text-pink-700 dark:text-purple-300'
+                'bg-blue-100 dark:bg-cyan-700/50 text-blue-700 dark:text-cyan-300'
             }`}>
             <svg className={`w-8 h-8 ${status === 'Connected' ? 'text-green-500' :
-                status.includes('failed') ? 'text-red-500' : 'text-pink-400'
+                status.includes('failed') ? 'text-red-500' : 'text-blue-400'
               }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {status === 'Connected' ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -190,8 +190,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-pink-50/50 dark:bg-purple-700/30 p-8 rounded-2xl mb-8 shadow-inner backdrop-blur-sm border-4 border-pink-200/50 dark:border-purple-700/50">
-          <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-400 mb-6 text-center flex items-center justify-center gap-2">
+        <div className="bg-blue-50/50 dark:bg-cyan-700/30 p-8 rounded-2xl mb-8 shadow-inner backdrop-blur-sm border-4 border-blue-200/50 dark:border-cyan-700/50">
+          <h2 className="text-3xl font-bold text-blue-500 dark:text-cyan-400 mb-6 text-center flex items-center justify-center gap-2">
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
@@ -199,19 +199,19 @@ export default function Home() {
           </h2>
 
           <div className="flex flex-col items-center gap-6">
-            <div className="w-full bg-white/80 dark:bg-slate-800/80 p-6 rounded-xl shadow-sm border-4 border-pink-200/50 dark:border-purple-700/50 min-h-[200px] flex items-center justify-center">
+            <div className="w-full bg-white/80 dark:bg-slate-800/80 p-6 rounded-xl shadow-sm border-4 border-blue-200/50 dark:border-cyan-700/50 min-h-[200px] flex items-center justify-center">
               <div className="grid grid-cols-6 gap-2 w-full">
                 {Array.from({ length: 12 }).map((_, index) => (
                   <div 
                     key={index}
                     className={`relative aspect-square rounded-lg border-2 ${commands[index]
-                      ? 'bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 border-pink-300 dark:border-purple-500' 
-                      : 'bg-white/50 dark:bg-slate-700/50 border-pink-200 dark:border-purple-700'
+                      ? 'bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 border-blue-300 dark:border-cyan-500' 
+                      : 'bg-white/50 dark:bg-slate-700/50 border-blue-200 dark:border-cyan-700'
                     } flex items-center justify-center p-2`}
                   >
                     {commands[index] ? (
                       <>
-                        <div className="text-pink-600 dark:text-purple-400">
+                        <div className="text-blue-600 dark:text-cyan-400">
                           {getCommandIcon(commands[index])}
                         </div>
                         <button
@@ -224,7 +224,7 @@ export default function Home() {
                         </button>
                       </>
                     ) : (
-                      <span className="text-pink-400 dark:text-purple-500 text-sm">
+                      <span className="text-blue-400 dark:text-cyan-500 text-sm">
                         ช่องที่ {index + 1}
                       </span>
                     )}
@@ -240,7 +240,7 @@ export default function Home() {
               // }}
               onClick={sendAllCommands}
               disabled={!device || commands.length === 0}
-              className="w-32 h-32 bg-gradient-to-br from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex flex-col items-center justify-center gap-2 group animate-pulse"
+              className="w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-full shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex flex-col items-center justify-center gap-2 group animate-pulse"
             >
               <svg className="w-12 h-12 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -255,7 +255,7 @@ export default function Home() {
             <button
               onClick={() => addCommand('FT', forwardValue)}
               disabled={!device}
-              className="w-full h-48 bg-gradient-to-br from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
+              className="w-full h-48 bg-gradient-to-br from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
               <div className="transform group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -270,7 +270,7 @@ export default function Home() {
             <button
               onClick={() => addCommand('RR', rightValue)}
               disabled={!device}
-              className="w-full h-48 bg-gradient-to-br from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
+              className="w-full h-48 bg-gradient-to-br from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
               <div className="transform group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -285,7 +285,7 @@ export default function Home() {
             <button
               onClick={() => addCommand('LR', leftValue)}
               disabled={!device}
-              className="w-full h-48 bg-gradient-to-br from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
+              className="w-full h-48 bg-gradient-to-br from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
               <div className="transform group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -302,7 +302,7 @@ export default function Home() {
       <div className="fixed bottom-8 right-8 flex gap-4">
         <button
           onClick={() => setShowSettingsModal(true)}
-          className="cursor-pointer bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white p-4 rounded-full shadow-xl hover:translate-y-[-5px] hover:shadow-2xl transition-all duration-300 group"
+          className="cursor-pointer bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white p-4 rounded-full shadow-xl hover:translate-y-[-5px] hover:shadow-2xl transition-all duration-300 group"
         >
           <svg className="w-10 h-10 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -312,7 +312,7 @@ export default function Home() {
 
         <button
           onClick={() => setShowConnectModal(true)}
-          className="cursor-pointer bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white p-4 rounded-full shadow-xl hover:translate-y-[-5px] hover:shadow-2xl transition-all duration-300 group"
+          className="cursor-pointer bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white p-4 rounded-full shadow-xl hover:translate-y-[-5px] hover:shadow-2xl transition-all duration-300 group"
         >
           <svg className="w-10 h-10 transform group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -323,12 +323,12 @@ export default function Home() {
       {/* Settings Modal */}
       {showSettingsModal && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in">
-          <div className="bg-white/90 dark:bg-slate-800/90 rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 backdrop-blur-sm border-4 border-pink-200/50 dark:border-purple-700/50">
+          <div className="bg-white/90 dark:bg-slate-800/90 rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 backdrop-blur-sm border-4 border-blue-200/50 dark:border-cyan-700/50">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-400">Settings</h2>
+              <h2 className="text-3xl font-bold text-blue-500 dark:text-cyan-400">Settings</h2>
               <button
                 onClick={() => setShowSettingsModal(false)}
-                className="text-pink-400 hover:text-pink-600 dark:hover:text-purple-300 transition-colors"
+                className="text-blue-400 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors"
               >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -338,12 +338,12 @@ export default function Home() {
 
             <div className="space-y-6">
               <div className="flex flex-col gap-2">
-                <label className="text-lg font-medium text-pink-600 dark:text-purple-400">Forward Value</label>
+                <label className="text-lg font-medium text-blue-600 dark:text-cyan-400">Forward Value</label>
                 <input
                   type="number"
                   value={forwardValue}
                   onChange={(e) => setForwardValue(e.target.value)}
-                  className="w-full p-4 text-xl border-4 border-pink-200 dark:border-purple-600 rounded-xl focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20 transition-all duration-300 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
+                  className="w-full p-4 text-xl border-4 border-blue-200 dark:border-cyan-600 rounded-xl focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
                   step="0.1"
                   min="0"
                   max="10"
@@ -351,12 +351,12 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-lg font-medium text-pink-600 dark:text-purple-400">Right Value</label>
+                <label className="text-lg font-medium text-blue-600 dark:text-cyan-400">Right Value</label>
                 <input
                   type="number"
                   value={rightValue}
                   onChange={(e) => setRightValue(e.target.value)}
-                  className="w-full p-4 text-xl border-4 border-pink-200 dark:border-purple-600 rounded-xl focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20 transition-all duration-300 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
+                  className="w-full p-4 text-xl border-4 border-blue-200 dark:border-cyan-600 rounded-xl focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
                   step="0.1"
                   min="0"
                   max="10"
@@ -364,12 +364,12 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-lg font-medium text-pink-600 dark:text-purple-400">Left Value</label>
+                <label className="text-lg font-medium text-blue-600 dark:text-cyan-400">Left Value</label>
                 <input
                   type="number"
                   value={leftValue}
                   onChange={(e) => setLeftValue(e.target.value)}
-                  className="w-full p-4 text-xl border-4 border-pink-200 dark:border-purple-600 rounded-xl focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20 transition-all duration-300 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
+                  className="w-full p-4 text-xl border-4 border-blue-200 dark:border-cyan-600 rounded-xl focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
                   step="0.1"
                   min="0"
                   max="10"
@@ -383,12 +383,12 @@ export default function Home() {
       {/* Connect Modal */}
       {showConnectModal && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in">
-          <div className="bg-white/90 dark:bg-slate-800/90 rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 backdrop-blur-sm border-4 border-pink-200/50 dark:border-purple-700/50">
+          <div className="bg-white/90 dark:bg-slate-800/90 rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 backdrop-blur-sm border-4 border-blue-200/50 dark:border-cyan-700/50">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-3xl font-bold text-pink-500 dark:text-purple-400">Connection</h2>
+              <h2 className="text-3xl font-bold text-blue-500 dark:text-cyan-400">Connection</h2>
               <button
                 onClick={() => setShowConnectModal(false)}
-                className="text-pink-400 hover:text-pink-600 dark:hover:text-purple-300 transition-colors"
+                className="text-blue-400 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors"
               >
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -397,9 +397,9 @@ export default function Home() {
             </div>
 
             <div className={`p-4 rounded-xl text-xl transition-all duration-300 flex items-center justify-center gap-2 mb-6 ${connectionStatus === 'Connected' ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400' :
-                'bg-pink-100 dark:bg-purple-700/50 text-pink-700 dark:text-purple-300'
+                'bg-blue-100 dark:bg-cyan-700/50 text-blue-700 dark:text-cyan-300'
               }`}>
-              <svg className={`w-8 h-8 ${connectionStatus === 'Connected' ? 'text-green-500' : 'text-pink-400'
+              <svg className={`w-8 h-8 ${connectionStatus === 'Connected' ? 'text-green-500' : 'text-blue-400'
                 }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {connectionStatus === 'Connected' ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -416,8 +416,8 @@ export default function Home() {
                 setShowConnectModal(false);
               }}
               className={`w-full py-4 px-8 text-xl rounded-xl transition-all duration-300 flex items-center justify-center gap-2 ${device
-                  ? 'bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white'
-                  : 'bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white'
+                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white'
+                  : 'bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white'
                 }`}
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -427,10 +427,10 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 )}
               </svg>
-              {device ? 'Disconnect' : 'Connect to LUMO'}
+              {device ? 'Disconnect' : 'Connect to PUMO'}
             </button>
 
-            <div className="mt-6 text-sm text-pink-500 dark:text-purple-400 text-center">
+            <div className="mt-6 text-sm text-blue-500 dark:text-cyan-400 text-center">
               {!device && (
                 <p className="flex items-center justify-center gap-2">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
