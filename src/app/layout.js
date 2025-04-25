@@ -1,14 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_Thai, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const notoSansThai = Noto_Sans_Thai({
+  variable: "--font-noto-sans",
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const notoSansMono = Noto_Sans_Mono({
+  variable: "--font-noto-sans-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal"],
 });
 
 export const metadata = {
@@ -20,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full bg-gradient-to-br from-gray-50 to-gray-100`}
+        className={`${notoSansThai.variable} ${notoSansMono.variable} antialiased h-full bg-gradient-to-br from-gray-50 to-gray-100`}
       >
         {children}
       </body>
