@@ -20,10 +20,10 @@ export default function Home() {
 
   const getCommandIcon = (command) => {
     if (!command) return null;
-    
+
     const value = command.substring(1);
     const type = command[0];
-    
+
     let icon;
     switch (type) {
       case 'F':
@@ -172,11 +172,11 @@ export default function Home() {
             </h1>
           </div>
           <div className={`p-4 rounded-xl text-xl transition-all duration-300 flex items-center justify-center gap-2 ${status === 'Connected' ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400' :
-              status.includes('failed') ? 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400' :
-                'bg-blue-100 dark:bg-cyan-700/50 text-blue-700 dark:text-cyan-300'
+            status.includes('failed') ? 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400' :
+              'bg-blue-100 dark:bg-cyan-700/50 text-blue-700 dark:text-cyan-300'
             }`}>
             <svg className={`w-8 h-8 ${status === 'Connected' ? 'text-green-500' :
-                status.includes('failed') ? 'text-red-500' : 'text-blue-400'
+              status.includes('failed') ? 'text-red-500' : 'text-blue-400'
               }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {status === 'Connected' ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -195,19 +195,19 @@ export default function Home() {
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
-            Command Preview
+            ตารางโปรแกรมคำสั่ง
           </h2>
 
           <div className="flex flex-col items-center gap-6">
             <div className="w-full bg-white/80 dark:bg-slate-800/80 p-6 rounded-xl shadow-sm border-4 border-blue-200/50 dark:border-cyan-700/50 min-h-[200px] flex items-center justify-center">
               <div className="grid grid-cols-6 gap-2 w-full">
                 {Array.from({ length: 12 }).map((_, index) => (
-                  <div 
+                  <div
                     key={index}
                     className={`relative aspect-square rounded-lg border-2 ${commands[index]
-                      ? 'bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 border-blue-300 dark:border-cyan-500' 
+                      ? 'bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 border-blue-300 dark:border-cyan-500'
                       : 'bg-white/50 dark:bg-slate-700/50 border-blue-200 dark:border-cyan-700'
-                    } flex items-center justify-center p-2`}
+                      } flex items-center justify-center p-2`}
                   >
                     {commands[index] ? (
                       <>
@@ -235,8 +235,8 @@ export default function Home() {
 
             <button
               // onClick={() => {
-                // console.log('sendAllCommands', commands);
-                // sendAllCommands();
+              // console.log('sendAllCommands', commands);
+              // sendAllCommands();
               // }}
               onClick={sendAllCommands}
               disabled={!device || commands.length === 0}
@@ -251,50 +251,55 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex flex-col items-center gap-4 group">
-            <button
-              onClick={() => addCommand('FT', forwardValue)}
-              disabled={!device}
-              className="w-full h-48 bg-gradient-to-br from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
-            >
-              <div className="transform group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                </svg>
-                F
-              </div>
-            </button>
-          </div>
-          
-          <div className="flex flex-col items-center gap-4 group">
-            <button
-              onClick={() => addCommand('RR', rightValue)}
-              disabled={!device}
-              className="w-full h-48 bg-gradient-to-br from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
-            >
-              <div className="transform group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                R
-              </div>
-            </button>
-          </div>
-          
+
           <div className="flex flex-col items-center gap-4 group">
             <button
               onClick={() => addCommand('LR', leftValue)}
               disabled={!device}
-              className="w-full h-48 bg-gradient-to-br from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
+              className="w-full h-48 bg-gradient-to-br bg-white border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
             >
-              <div className="transform group-hover:scale-110 transition-transform duration-300">
+              {/* <div className="transform group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
                 L
+              </div> */}
+              <img src="/images/L.png" alt="L" className="max-h-[192px]" />
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center gap-4 group">
+            <button
+              onClick={() => addCommand('FT', forwardValue)}
+              disabled={!device}
+              className="w-full h-48 bg-gradient-to-br bg-white border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
+            >
+              <div className="transform group-hover:scale-110 transition-transform duration-300">
+                {/* <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                </svg>
+                F */}
+                <img src="/images/F.png" alt="Forward" className="max-h-[192px]" />
               </div>
             </button>
           </div>
+
+          <div className="flex flex-col items-center gap-4 group">
+            <button
+              onClick={() => addCommand('RR', rightValue)}
+              disabled={!device}
+              className="w-full h-48 bg-gradient-to-br bg-white border text-white text-4xl font-bold rounded-xl shadow-lg hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center group"
+            >
+              {/* <div className="transform group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-20 h-20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+                R
+              </div> */}
+              <img src="/images/R.png" alt="R" className="max-h-[192px]" />
+            </button>
+          </div>
+
         </div>
       </div>
 
@@ -397,7 +402,7 @@ export default function Home() {
             </div>
 
             <div className={`p-4 rounded-xl text-xl transition-all duration-300 flex items-center justify-center gap-2 mb-6 ${connectionStatus === 'Connected' ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400' :
-                'bg-blue-100 dark:bg-cyan-700/50 text-blue-700 dark:text-cyan-300'
+              'bg-blue-100 dark:bg-cyan-700/50 text-blue-700 dark:text-cyan-300'
               }`}>
               <svg className={`w-8 h-8 ${connectionStatus === 'Connected' ? 'text-green-500' : 'text-blue-400'
                 }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -416,8 +421,8 @@ export default function Home() {
                 setShowConnectModal(false);
               }}
               className={`w-full py-4 px-8 text-xl rounded-xl transition-all duration-300 flex items-center justify-center gap-2 ${device
-                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white'
-                  : 'bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white'
+                ? 'bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white'
+                : 'bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white'
                 }`}
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
