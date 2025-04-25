@@ -65,8 +65,6 @@ yarn build
 
 <div align="center">
   <img src="public/next.svg" alt="Next.js" width="50"/>
-  <img src="public/globe.svg" alt="React" width="50"/>
-  <img src="public/window.svg" alt="Tailwind" width="50"/>
 </div>
 
 - 🏗️ **Framework**: Next.js 15.3.1
