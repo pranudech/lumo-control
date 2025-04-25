@@ -28,7 +28,7 @@ A modern web application built with Next.js for controlling and managing Lumo de
 
 1. 📥 Clone the repository:
 ```bash
-git clone https://github.com/yourusername/lumo-control.git
+git clone https://github.com/pranudech/lumo-control.git
 cd lumo-control
 ```
 
@@ -60,16 +60,6 @@ npm run build
 # or
 yarn build
 ```
-
-## 🚀 Deployment
-
-The application can be deployed on Vercel or any other platform that supports Next.js applications.
-
-### 🌐 Deploy on Vercel
-
-[![Deploy with Vercel](public/vercel.svg)](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 ## 🧰 Tech Stack
 
