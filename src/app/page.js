@@ -192,10 +192,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen p-8 bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-50 dark:from-blue-900 dark:via-cyan-900/20 dark:to-indigo-900">
-      <div className="max-w-6xl mx-auto bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 animate-fade-in border-4 border-blue-200/50 dark:border-cyan-700/50">
+      <div className="max-w-6xl mx-auto bg-[#fdfdf7] dark:bg-slate-800/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 animate-fade-in border-4 border-blue-200/50 dark:border-cyan-700/50">
         <div className="text-center mb-8">
           <div className="flex flex-col items-center justify-center gap-4 mb-4">
-            <img src="/images/logo.png" alt="PUMO" className="h-30 animate-bounce" onClick={playClickSound} />
+            <img src="/images/pumo-logo.png" alt="PUMO" className="h-30 animate-bounce" onClick={playClickSound} />
             <h5 className="text-4xl font-bold bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-500 bg-clip-text text-transparent animate-pulse">
               PUMO Control
             </h5>
@@ -203,7 +203,7 @@ export default function Home() {
         </div>
 
         <div className="bg-blue-50/50 dark:bg-cyan-700/30 p-8 rounded-2xl mb-8 shadow-inner backdrop-blur-sm border-4 border-blue-200/50 dark:border-cyan-700/50">
-          <h2 className="text-3xl font-bold text-blue-500 dark:text-cyan-400 mb-6 text-center flex items-center justify-center gap-2">
+          <h2 className="text-3xl text-blue-500 dark:text-cyan-400 mb-6 text-center flex items-center justify-center gap-2">
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
@@ -335,7 +335,7 @@ export default function Home() {
             onClick={() => setShowConnectModal(true)}
             className="cursor-pointer bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white p-4 rounded-full shadow-xl hover:translate-y-[-5px] hover:shadow-2xl transition-all duration-300 group"
           >
-            <img src="/images/bluetooth.png" alt="Bluetooth" className="w-10 h-10" />
+            <img src="/images/bluetooth.png" alt="Bluetooth" className="w-10 h-10 invert dark:invert-0" />
           </button>
         </div>
       </div>
