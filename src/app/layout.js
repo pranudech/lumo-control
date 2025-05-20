@@ -16,8 +16,8 @@ const notoSansMono = Noto_Sans_Mono({
 });
 
 export const metadata = {
-  title: "LUMO Control",
-  description: "Control interface for LUMO device",
+  title: "PUMO Control",
+  description: "Control interface for PUMO device",
 };
 
 export default function RootLayout({ children }) {

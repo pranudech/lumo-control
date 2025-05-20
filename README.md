@@ -1,10 +1,10 @@
-# 🎮 Lumo Control
+# 🎮 Pumo Control
 
 <div align="center">
-  <img src="public/lumo-logo.svg" alt="Lumo Control Logo" width="200"/>
+  <img src="public/Pumo-logo.svg" alt="Pumo Control Logo" width="200"/>
 </div>
 
-A modern web application built with Next.js for controlling and managing Lumo devices.
+A modern web application built with Next.js for controlling and managing Pumo devices.
 
 ## 🚀 Features
 
@@ -28,8 +28,8 @@ A modern web application built with Next.js for controlling and managing Lumo de
 
 1. 📥 Clone the repository:
 ```bash
-git clone https://github.com/pranudech/lumo-control.git
-cd lumo-control
+git clone https://github.com/pranudech/Pumo-control.git
+cd Pumo-control
 ```
 
 2. 📦 Install dependencies:
@@ -76,7 +76,7 @@ yarn build
 ## 📁 Project Structure
 
 ```
-lumo-control/
+Pumo-control/
 ├── 📂 src/              # Source files
 ├── 📂 public/           # Static files
 ├── 📂 node_modules/     # Dependencies

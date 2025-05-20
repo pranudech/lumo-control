@@ -27,7 +27,7 @@ function updateConnectionStatus(isConnected) {
     } else {
         connectionStatus.textContent = 'Disconnected';
         connectionStatus.style.backgroundColor = '#f8f9fa';
-        connectBtn.textContent = 'Connect to LUMO';
+        connectBtn.textContent = 'Connect to PUMO';
     }
 }
 
