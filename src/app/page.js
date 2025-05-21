@@ -9,9 +9,9 @@ export default function Home() {
   const [status, setStatus] = useState('Disconnected');
   const [connectionStatus, setConnectionStatus] = useState('Disconnected');
   const [commands, setCommands] = useState([]);
-  const [forwardValue, setForwardValue] = useState('1.0');
-  const [rightValue, setRightValue] = useState('1.0');
-  const [leftValue, setLeftValue] = useState('1.0');
+  const [forwardValue, setForwardValue] = useState('2.9');
+  const [rightValue, setRightValue] = useState('0.886');
+  const [leftValue, setLeftValue] = useState('0.925');
   const [showConnectModal, setShowConnectModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [audioContext, setAudioContext] = useState(null);
